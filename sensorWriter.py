@@ -25,7 +25,7 @@ def write_aio_weather_sensor(device):
     write_aio_value_to_feed('weather.hmip-wind', weather.windSpeed, 'Wind')
     write_aio_value_to_feed('weather.hmip-rain', weather.todayRainCounter, 'Rain')
     write_aio_value_to_feed('weather.hmip-light', weather.illumination, 'Light')
-    write_aio_value_to_feed('weather.hmip-raining', 1 if weather.raining else 0, 'Raining')
+    write_aio_value_to_feed('weather.hmip-raining', 'w:raindrop' if weather.raining else 'times-circle-o', 'Raining')
     write_aio_value_to_feed('weather.hmip-vapor', weather.vaporAmount, 'Vapor')
     print(f'Done: Sending data to AIO.')
 
